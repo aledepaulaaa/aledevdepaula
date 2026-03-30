@@ -43,12 +43,16 @@ export function Header({ theme, toggleTheme }: HeaderProps) {
   const handleScroll = (href: string) => {
     setIsOpen(false);
     if (href.startsWith('/#')) {
+      const id = href.replace('/', '');
       if (location.pathname !== '/') {
+        // Se não estivermos na home, navegamos primeiro
         navigate(href);
       } else {
-        const id = href.replace('/', '');
+        // Se já estivermos na home, fazemos scroll suave
         const element = document.querySelector(id.startsWith('#') ? id : `#${id}`);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     }
   };
@@ -61,6 +65,7 @@ export function Header({ theme, toggleTheme }: HeaderProps) {
       >
         <Link 
           to="/"
+          onClick={() => setIsOpen(false)}
           className="flex items-center gap-2 md:gap-4 cursor-pointer group shrink-0" 
         >
           <Logo className="w-7 h-7 md:w-10 md:h-10 group-hover:scale-110 transition-transform duration-300 shrink-0" />
@@ -143,16 +148,26 @@ export function Header({ theme, toggleTheme }: HeaderProps) {
           className="xl:hidden fixed inset-x-4 sm:inset-x-6 top-24 pointer-events-auto glass rounded-3xl p-8 flex flex-col gap-6 shadow-2xl"
         >
           {navigation.map((link, index) => (
-            <Link 
-              key={`nav-mobile-${index}`} 
-              to={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-lg font-bold text-left hover:text-dark-primary cursor-pointer"
-            >
-              {link.name}
-            </Link>
+             link.href.startsWith('/#') ? (
+              <button 
+                key={`nav-mobile-${index}`} 
+                onClick={() => handleScroll(link.href)} 
+                className="text-lg font-bold text-left hover:text-dark-primary cursor-pointer w-full"
+              >
+                {link.name}
+              </button>
+            ) : (
+              <Link 
+                key={`nav-mobile-${index}`} 
+                to={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-bold text-left hover:text-dark-primary cursor-pointer"
+              >
+                {link.name}
+              </Link>
+            )
           ))}
-          <Button variant="accent" onClick={() => { setIsOpen(false); handleScroll('/#contact'); }} fullWidth className="rounded-2xl py-4 font-bold uppercase tracking-widest !cursor-pointer">
+          <Button variant="accent" onClick={() => handleScroll('/#contact')} fullWidth className="rounded-2xl py-4 font-bold uppercase tracking-widest !cursor-pointer">
             {cta}
           </Button>
         </motion.nav>
