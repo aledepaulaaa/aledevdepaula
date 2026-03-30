@@ -1,4 +1,4 @@
-# Portfolio: Alexandre de Paula (Landing Page B2B)
+# Portfolio: Alexandre de Paula
 
 Bem-vindo ao repositório do meu portfólio profissional, reestruturado como uma SPA (Single Page Application) focada em conversão, apresentação de cases e ofertas de soluções em Engenharia de Software.
 
