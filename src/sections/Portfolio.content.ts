@@ -76,7 +76,7 @@ const portfolioContent = {
           pt: "E-commerce de moda com sistema de estoque inteligente e checkout otimizado.",
           en: "Fashion e-commerce with intelligent stock system and optimized checkout."
         }),
-        tags: ["E-commerce", "React", "Node.js", "PostgreSQL"],
+        tags: ["E-commerce", "React", "Firebase", "NextJs"],
       },
       {
         id: "integrador",
