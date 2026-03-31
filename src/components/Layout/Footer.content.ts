@@ -8,8 +8,8 @@ const footerContent = {
       en: "Alexandre de Paula | Software Engineer",
     }),
     tagline: t({
-      pt: "Excelência em Engenharia",
-      en: "Engineering Excellence",
+      pt: "Excelência em Desenvolvimento e Inovação",
+      en: "Excellence in Development and Innovation",
     }),
     rights: t({
       pt: "Alexandre de Paula. Todos os direitos reservados.",
