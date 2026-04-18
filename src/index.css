@@ -31,7 +31,7 @@
   }
 }
 
-/* Efeito Premium de Textura noise - Versão Clean */
+/* Textura noise - Versão Clean */
 .noise-bg::before {
   content: "";
   @apply fixed inset-0 pointer-events-none opacity-[0.025] z-[100];
