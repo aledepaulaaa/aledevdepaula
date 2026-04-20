@@ -17,14 +17,12 @@ const projectsLinks: ProjectLinkInfo[] = [
   {
     id: 'biomeat',
     image: '/assets/img/biomeat.png',
-    platformLink: 'https://www.biomeat.com.br/',
     isSaas: false
   },
   {
     id: 'bora',
     image: '/assets/img/bora.png',
     link: 'https://github.com/aledepaulaaa/bora',
-    platformLink: 'https://www.aplicativobora.com/',
     isSaas: true
   },
   {
@@ -37,7 +35,6 @@ const projectsLinks: ProjectLinkInfo[] = [
     id: 'iara',
     image: '/assets/img/iara.png',
     link: 'https://github.com/aledepaulaaa/projetoiara',
-    platformLink: 'https://iaraapp.com.br/',
     isSaas: false
   },
   {
@@ -50,7 +47,6 @@ const projectsLinks: ProjectLinkInfo[] = [
     id: 'aznegadaz',
     image: '/assets/img/aznegadaz.png',
     link: 'https://github.com/aledepaulaaa/aznegadaz',
-    platformLink: 'https://aznegadaz.vercel.app/',
     isSaas: false,
     isDevelopment: true
   },
